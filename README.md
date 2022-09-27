@@ -2,16 +2,16 @@
 
 https://ysteinhart1.github.io/cs291a_project0/
 
-| Concurrency      | Requests Served with HTTPS| Requests Server with HTTP |
-| ----------- | ----------- | ------------|
-| 2      | 248       | 556     |
-| 4   | 466        | 1039
-| 8   | 1007       | 1893    |
-| 16   | 1811       |    2363   |
-| 32   | 2269       |  2414    |
-| 64   | 2666       |   2532    |
-| 128   | 2596       |  2793   |
-| 256   | 2624       |  2552       |
+| Concurrency      | Requests Served with HTTPS| 
+| ----------- | ----------- | 
+| 2      | 248       |
+| 4   | 466        |
+| 8   | 1007       |
+| 16   | 1811       | 
+| 32   | 2269       |
+| 64   | 2666       |
+| 128   | 2596       |
+| 256   | 2624       |
 
 * There are diminishing returns since the server is not able to scale endlessly. For each concurrent request, it has to spin off a thread to handle it. At a certain point, the server is spinning off more threads than it is able to linearly scale with, so the cost of each thread becomes greater. Once we reach this point, it is limited by the number of concurrent requests it can handle, so even if more requests are issued, it is still limited by the ability of the server to respond to these requests.
 
